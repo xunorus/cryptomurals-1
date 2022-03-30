@@ -5,6 +5,11 @@ import styles from '../styles/hamburgers.module.css';
 import stylesLayout from '../styles/Layout.module.css';
 import ConnectContext from '../context/connectContext';
 import CityContext from '../context/CityContext';
+import { useRouter } from 'next/router';
+import { shortAddr } from '../utils/main.js';
+// import swal from 'sweetalert2'
+
+
 
 function Layout({ children }) {
   const [showDropDown, setShowDropDown] = useState(false);
@@ -170,7 +175,8 @@ function Layout({ children }) {
                     onClick={disconnectWallet}
                   ></div>
                   <div style={{ fontFamily: 'Monda', color: 'white' }}>
-                    X 04 ...bD
+                    {shortAddr(wallet)}
+                     {/* X 04 ...bD */}
                   </div>
                 </div>
               ) : (
